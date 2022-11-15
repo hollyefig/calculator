@@ -7,6 +7,7 @@
     <title>Calculator</title>
     <script src="./script.js" defer></script>
     <link href="./calcCSS.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -17,12 +18,12 @@
                 <div class="mainNum"></div>
             </div>
             <div class="calcGrid">
-                <input type="button" value="Clear" className="Clear" />
+                <input type="button" value="Clear" className="Clear" onclick="eraseAll()" />
                 <input type="button" value="Delete" className="Delete" />
                 <input type="button" value="7" className="seven" onclick="numEntered(this)" />
                 <input type="button" value="8" className="eight" onclick="numEntered(this)" />
                 <input type="button" value="9" className="nine" onclick="numEntered(this)"/>
-                <input type="button" value="÷" id="divide" onclick="express(this)"/>
+                <input type="button" value="&#37;" id="divide" onclick="express(this)"/>
                 <input type="button" value="4" className="four" onclick="numEntered(this)" />
                 <input type="button" value="5" className="five" onclick="numEntered(this)" />
                 <input type="button" value="6" className="six" onclick="numEntered(this)" />
@@ -31,9 +32,9 @@
                 <input type="button" value="2" className="two" onclick="numEntered(this)" />
                 <input type="button" value="3" className="three" onclick="numEntered(this)" />
                 <input type="button" value="-" id="subtract" onclick="express(this)"/>
-                <input type="button" value="." className="decimal" />
+                <input type="button" value="&#46;" className="decimal" />
                 <input type="button" value="0" className="zero" onclick="numEntered(this)"/>
-                <input type="button" value="=" className="equal" onclick="operate()" />
+                <input type="button" value="&#61;" className="equal" onclick="operate()" />
                 <input type="button" value="&#43;" id="add" onclick="express(this)" />
             </div>
         </div>

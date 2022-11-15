@@ -14,6 +14,17 @@ let expression;
 let allNums = [];
 let finalResult;
 
+const eraseAll = () => {
+  baseNum = [];
+  prevNum = 0;
+  expression = 0;
+  allNums = [];
+  finalResult = 0;
+  mainNumChild.textContent = 0;
+  secondNum.textContent = "";
+  console.log("clear clicked");
+};
+
 const numEntered = (e) => {
   baseNum.push(e.value);
   mainNumChild.textContent = baseNum.join("");
@@ -30,13 +41,10 @@ const express = (e) => {
     expression = "add";
   } else if (e.id === "subtract") {
     expression = "subtract";
-    console.log("num in sub", prevNum);
   } else if (e.id === "multiply") {
     expression = "multiply";
-    console.log("num in sub", prevNum);
   } else if (e.id === "divide") {
     expression = "divide";
-    console.log("num in divide", prevNum);
   }
   baseNum = [];
 };

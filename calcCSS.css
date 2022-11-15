@@ -31,25 +31,33 @@ body {
     width: 90%;
     padding:1em;
     margin:0em 0em 1em 0em;
-    height: 100px;
-    background-color:  rgb(196, 203, 250);
+    height: 130px;
+    background-color:  rgb(247, 196, 250);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    font-family: 'Sono', sans-serif;
+    font-weight: 600;
+}
+
+.secondNum {
+    font-weight: 300;
+    color:rgb(194, 100, 177);
+    font-size: 1em;
 }
 
 .mainNum {
-    color:blue;
-    height:50px;
-    font-size: 1.5em;
+    color:rgb(159, 142, 216);
+    font-size: 2em;
+    height: 80px;
 }
 
 
 .calcGrid {
     display:grid;
-    gap:.5em;
+    gap:1em;
     margin:.5em;
     width: 90%;
     grid-template-columns: repeat(4, auto);
@@ -59,8 +67,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:2em 1em;
+    padding:1em 1em;
     cursor: pointer;
+    background-color: rgb(159, 142, 216);
+    border:none;
+    border-radius: 10px;
+    box-shadow: 0px .3em 0px rgb(138, 119, 192);
+    color:#fff;
+    font-family: 'Sono', sans-serif;
+    font-size: 1.5rem;
 }
 
 /* -n is basically 0  */
