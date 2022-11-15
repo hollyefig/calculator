@@ -19,12 +19,13 @@ body {
 .calcWrapper {
     width: 500px;
     background-color: rgb(168, 168, 226);
-    padding:1em;
+    padding:2em 1em;
     border-radius: 20px;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: .3em .5em 0px rgb(152, 215, 211);
 }
 
 .calcDisplay {
@@ -32,7 +33,8 @@ body {
     padding:1em;
     margin:0em 0em 1em 0em;
     height: 130px;
-    background-color:  rgb(247, 196, 250);
+    background-color:rgb(247, 196, 250);
+    box-shadow: .5em .5em 0px rgb(232, 163, 221) inset;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -76,6 +78,11 @@ body {
     color:#fff;
     font-family: 'Sono', sans-serif;
     font-size: 1.5rem;
+}
+
+.calcGrid input:active {
+    background-color:#fff;
+    color: rgb(168, 168, 226);
 }
 
 /* -n is basically 0  */
