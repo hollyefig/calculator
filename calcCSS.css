@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+
+body {
+    background-color:rgb(200, 234, 222);
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calcWrapper {
+    width: 500px;
+    background-color: rgb(168, 168, 226);
+    padding:1em;
+    border-radius: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.calcDisplay {
+    width: 90%;
+    padding:1em;
+    margin:0em 0em 1em 0em;
+    height: 100px;
+    background-color:  rgb(196, 203, 250);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.mainNum {
+    color:blue;
+    height:50px;
+    font-size: 1.5em;
+}
+
+
+.calcGrid {
+    display:grid;
+    gap:.5em;
+    margin:.5em;
+    width: 90%;
+    grid-template-columns: repeat(4, auto);
+}
+
+.calcGrid input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2em 1em;
+    cursor: pointer;
+}
+
+/* -n is basically 0  */
+.calcGrid input:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.calcGrid input:nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
