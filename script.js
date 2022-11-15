@@ -54,24 +54,24 @@ const operate = () => {
   secondNum.textContent = baseNum.join("");
   if (expression === "add") {
     let newNum = Number(baseNum.join(""));
+    finalResult === undefined ? null : (prevNum = finalResult);
     let result = prevNum + newNum;
-    allNums.push(result);
-    finalResult = allNums.reduce((a, b) => a + b, 0);
+    finalResult = result;
   } else if (expression === "subtract") {
     let newNum = Number(baseNum.join(""));
+    finalResult === undefined ? null : (prevNum = finalResult);
     let result = prevNum - newNum;
-    allNums.push(result);
-    finalResult = allNums.reduce((a, b) => a + b, 0);
+    finalResult = result;
   } else if (expression === "multiply") {
     let newNum = Number(baseNum.join(""));
+    finalResult === undefined ? null : (prevNum = finalResult);
     let result = prevNum * newNum;
-    allNums.push(result);
-    finalResult = allNums.reduce((a, b) => a + b, 0);
+    finalResult = result;
   } else if (expression === "divide") {
     let newNum = Number(baseNum.join(""));
+    finalResult === undefined ? null : (prevNum = finalResult);
     let result = prevNum / newNum;
-    allNums.push(result);
-    finalResult = allNums.reduce((a, b) => a + b, 0);
+    finalResult = result;
   }
   mainNumChild.textContent = finalResult;
   baseNum = [];
