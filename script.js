@@ -8,26 +8,29 @@ const mainNumChild = document.createElement("div");
 mainNumChild.setAttribute("class", "mainNum");
 mainNum.appendChild(mainNumChild);
 
-let baseNum = [];
+let baseNum = [0];
 let prevNum;
 let expression;
 let allNums = [];
 let finalResult;
+mainNumChild.textContent = 0;
+
+const numEntered = (e) => {
+  if (baseNum[0] === 0) {
+    baseNum.shift();
+  }
+  baseNum.push(e.value);
+  mainNumChild.textContent = baseNum.join("");
+};
 
 const eraseAll = () => {
-  baseNum = [];
+  baseNum = [0];
   prevNum = 0;
   expression = 0;
   allNums = [];
   finalResult = 0;
   mainNumChild.textContent = 0;
   secondNum.textContent = "";
-  console.log("clear clicked");
-};
-
-const numEntered = (e) => {
-  baseNum.push(e.value);
-  mainNumChild.textContent = baseNum.join("");
 };
 
 const express = (e) => {
@@ -35,7 +38,6 @@ const express = (e) => {
   finalResult === undefined
     ? (secondNum.textContent = baseNum.join(""))
     : (secondNum.textContent = finalResult);
-
   prevNum = Number(baseNum.join(""));
   if (e.id === "add") {
     expression = "add";
@@ -75,4 +77,9 @@ const operate = () => {
   }
   mainNumChild.textContent = finalResult;
   baseNum = [];
+};
+
+const backspace = () => {
+  baseNum.pop();
+  mainNumChild.textContent = baseNum.join("");
 };
