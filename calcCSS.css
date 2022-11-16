@@ -80,7 +80,11 @@ body {
     font-size: 1.5rem;
 }
 
-.calcGrid input:active {
+.calcGrid input:active,
+#add:active,
+#subtract:active,
+#multiply:active,
+#divide:active {
     background-color:#fff;
     color: rgb(168, 168, 226);
 }
