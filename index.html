@@ -18,24 +18,24 @@
                 <div class="mainNum"></div>
             </div>
             <div class="calcGrid">
-                <input type="button" value="Clear" className="Clear" onclick="eraseAll()" />
-                <input type="button" value="Delete" className="Delete" onclick='backspace()'/>
-                <input type="button" value="7" className="seven" onclick="numEntered(this)" />
-                <input type="button" value="8" className="eight" onclick="numEntered(this)" />
-                <input type="button" value="9" className="nine" onclick="numEntered(this)"/>
-                <input type="button" value="&#37;" id="divide" onclick="express(this)"/>
-                <input type="button" value="4" className="four" onclick="numEntered(this)" />
-                <input type="button" value="5" className="five" onclick="numEntered(this)" />
-                <input type="button" value="6" className="six" onclick="numEntered(this)" />
-                <input type="button" value="x" id="multiply" onclick="express(this)"/>
-                <input type="button" value="1" className="one" onclick="numEntered(this)" />
-                <input type="button" value="2" className="two" onclick="numEntered(this)" />
-                <input type="button" value="3" className="three" onclick="numEntered(this)" />
-                <input type="button" value="-" id="subtract" onclick="express(this)"/>
-                <input type="button" value="&#46;" className="decimal" />
-                <input type="button" value="0" className="zero" onclick="numEntered(this)"/>
-                <input type="button" value="&#61;" className="equal" onclick="operate()" />
-                <input type="button" value="&#43;" id="add" onclick="express(this)" />
+                <button className="Clear" onclick="eraseAll()">Clear</button>
+                <button className="Delete" onclick='backspace()'>Delete</button>
+                <button className="seven" onclick="numEntered(this)">7</button>
+                <button className="eight" onclick="numEntered(this)">8</button>
+                <button className="nine" onclick="numEntered(this)">9</button>
+                <button id="divide" onclick="operate(this)">÷</button>
+                <button className="four" onclick="numEntered(this)">4</button>
+                <button className="five" onclick="numEntered(this)">5</button>
+                <button className="six" onclick="numEntered(this)">6</button>
+                <button id="multiply" onclick="operate(this)">x</button>
+                <button className="one" onclick="numEntered(this)">1</button>
+                <button className="two" onclick="numEntered(this)">2</button>
+                <button className="three" onclick="numEntered(this)">3</button>
+                <button id="subtract" onclick="operate(this)">-</button>
+                <button className="decimal">.</button>
+                <button className="zero" onclick="numEntered(this)">0</button>
+                <button id="equal" onclick="operate(this)">=</button>
+                <button id="add" onclick="operate(this)">+</button>
             </div>
         </div>
     </div>
