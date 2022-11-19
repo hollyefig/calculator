@@ -14,7 +14,23 @@ let allNums = [];
 let expression;
 let formulaDisplay = [];
 let finalResult;
-mainNumChild.textContent = "";
+mainNumChild.textContent = "0";
+
+const eraseAll = () => {
+  num = [];
+  allNums = [];
+  expression = undefined;
+  formulaDisplay = [];
+  mainNumChild.textContent = "0";
+  secondNum.textContent = "";
+  finalResult = undefined;
+};
+
+const erase = () => {
+  num.pop();
+  formulaDisplay.pop();
+  secondNum.textContent = formulaDisplay.join("");
+};
 
 const add = (e) => {
   return e.reduce((a, b) => a + b, 0);
@@ -40,13 +56,11 @@ const operate = (e) => {
   if (expression === "add") {
     if (finalResult === undefined && allNums.length === 2) {
       finalResult = add(allNums);
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
     } else if (allNums.length === 2) {
       let result = add(allNums);
       finalResult = result;
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
     }
@@ -55,13 +69,11 @@ const operate = (e) => {
   if (expression === "subtract") {
     if (finalResult === undefined && allNums.length === 2) {
       finalResult = subtract(allNums);
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
     } else if (allNums.length === 2) {
       let result = subtract(allNums);
       finalResult = result;
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
     }
@@ -71,13 +83,11 @@ const operate = (e) => {
   if (expression === "multiply") {
     if (finalResult === undefined && allNums.length === 2) {
       finalResult = multi(allNums);
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
     } else if (allNums.length === 2) {
       let result = multi(allNums);
       finalResult = result;
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
     }
@@ -87,18 +97,16 @@ const operate = (e) => {
   if (expression === "divide") {
     if (finalResult === undefined && allNums.length === 2) {
       finalResult = divide(allNums);
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
-      console.log("allNums after RESET", Number(allNums.join("")));
     } else if (allNums.length === 2) {
       let result = divide(allNums);
       finalResult = result;
-      mainNumChild.textContent = finalResult;
       allNums = [];
       allNums.push(finalResult);
     }
   }
+  finalResult !== undefined ? (mainNumChild.textContent = finalResult) : null;
 
   if (e.id === "add") {
     expression = "add";
@@ -118,11 +126,10 @@ const operate = (e) => {
   }
   secondNum.textContent = formulaDisplay.join("");
   num = [];
-
-  console.log("current expression", expression);
 };
 
 const numEntered = (e) => {
+  console.log("inner text", e.innerText);
   num.push(Number(e.innerText));
   console.log("numArray", num);
   formulaDisplay.push(e.innerText);

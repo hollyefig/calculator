@@ -17,7 +17,7 @@ body {
 }
 
 .calcWrapper {
-    width: 500px;
+    width: 460px;
     background-color: rgb(208, 208, 249);
     padding:2em 1em;
     border-radius: 20px;
@@ -42,6 +42,7 @@ body {
     align-items: flex-end;
     font-family: 'Sono', sans-serif;
     font-weight: 600;
+    overflow-x: hidden;
 }
 
 .secondNum {

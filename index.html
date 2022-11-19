@@ -18,8 +18,8 @@
                 <div class="mainNum"></div>
             </div>
             <div class="calcGrid">
-                <button className="Clear" onclick="eraseAll()">Clear</button>
-                <button className="Delete" onclick='backspace()'>Delete</button>
+                <button className="Clear" id="clear" onclick="eraseAll()">Clear</button>
+                <button className="Delete" id="delete" onclick='erase(this)'>Delete</button>
                 <button className="seven" onclick="numEntered(this)">7</button>
                 <button className="eight" onclick="numEntered(this)">8</button>
                 <button className="nine" onclick="numEntered(this)">9</button>
@@ -32,7 +32,7 @@
                 <button className="two" onclick="numEntered(this)">2</button>
                 <button className="three" onclick="numEntered(this)">3</button>
                 <button id="subtract" onclick="operate(this)">-</button>
-                <button className="decimal">.</button>
+                <button className="decimal" >.</button>
                 <button className="zero" onclick="numEntered(this)">0</button>
                 <button id="equal" onclick="operate(this)">=</button>
                 <button id="add" onclick="operate(this)">+</button>
