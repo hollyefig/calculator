@@ -28,6 +28,13 @@ body {
     box-shadow: .3em .5em 0px rgb(152, 215, 211);
 }
 
+.divide {
+    width: 90%;
+    height: 1.5px;
+    background-color: rgb(249, 247, 208);
+    margin:0em 0em .4em 0em;
+}
+
 .calcDisplay {
     width: 90%;
     padding:1em;
@@ -71,7 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:1em 1em;
+    padding:.6em;
     cursor: pointer;
     background-color: rgb(160, 169, 230);
     border:none;
@@ -95,11 +102,20 @@ body {
 .calcGrid button:nth-child(1) {
     grid-column-start: 1;
     grid-column-end: 3;
+    background-color: rgb(230 160 223);
+    box-shadow: 0px .3em 0px rgb(210, 117, 178);
 }
 
 .calcGrid button:nth-child(2) {
     grid-column-start: 3;
     grid-column-end: 5;
+    background-color: rgb(230 160 223);
+    box-shadow: 0px .3em 0px rgb(210, 117, 178);
+}
+
+.calcGrid button:nth-child(-n + 2):active {
+    background-color:#fff;
+    color: rgb(230 160 223);
 }
 
 #add,
