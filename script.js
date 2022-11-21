@@ -53,62 +53,37 @@ const operate = (e) => {
   } else {
     formulaDisplay = [finalResult];
   }
-  console.log("allNums in operate", allNums);
 
-  // if addition
-  if (expression === "add") {
-    if (finalResult === undefined && allNums.length === 2) {
+  if (finalResult === undefined && allNums.length === 2) {
+    if (expression === "add") {
       finalResult = add(allNums);
-      allNums = [];
-      allNums.push(finalResult);
-    } else if (allNums.length === 2) {
+    } else if (expression === "subtract") {
+      finalResult = subtract(allNums);
+    } else if (expression === "multiply") {
+      finalResult = multi(allNums);
+    } else if (expression === "divide") {
+      finalResult = divide(allNums);
+    }
+    allNums = [];
+    allNums.push(finalResult);
+  } else if (allNums.length === 2) {
+    if (expression === "add") {
       let result = add(allNums);
       finalResult = result;
-      allNums = [];
-      allNums.push(finalResult);
-    }
-  }
-  // if subtraction
-  if (expression === "subtract") {
-    if (finalResult === undefined && allNums.length === 2) {
-      finalResult = subtract(allNums);
-      allNums = [];
-      allNums.push(finalResult);
-    } else if (allNums.length === 2) {
+    } else if (expression === "subtract") {
       let result = subtract(allNums);
       finalResult = result;
-      allNums = [];
-      allNums.push(finalResult);
-    }
-  }
-
-  // if multiply
-  if (expression === "multiply") {
-    if (finalResult === undefined && allNums.length === 2) {
-      finalResult = multi(allNums);
-      allNums = [];
-      allNums.push(finalResult);
-    } else if (allNums.length === 2) {
+    } else if (expression === "multiply") {
       let result = multi(allNums);
       finalResult = result;
-      allNums = [];
-      allNums.push(finalResult);
-    }
-  }
-
-  // if divide
-  if (expression === "divide") {
-    if (finalResult === undefined && allNums.length === 2) {
-      finalResult = divide(allNums);
-      allNums = [];
-      allNums.push(finalResult);
-    } else if (allNums.length === 2) {
+    } else if (expression === "divide") {
       let result = divide(allNums);
       finalResult = result;
-      allNums = [];
-      allNums.push(finalResult);
     }
+    allNums = [];
+    allNums.push(finalResult);
   }
+
   finalResult !== undefined ? (mainNumChild.textContent = finalResult) : null;
 
   if (e.id === "add") {
