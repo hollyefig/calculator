@@ -51,7 +51,7 @@ const operate = (e) => {
     let joinNum = num.join("");
     allNums.push(Number(joinNum));
   } else {
-    formulaDisplay = [finalResult];
+    formulaDisplay = [Math.round(finalResult * 100) / 100];
   }
 
   if (finalResult === undefined && allNums.length === 2) {
@@ -65,26 +65,28 @@ const operate = (e) => {
       finalResult = divide(allNums);
     }
     allNums = [];
-    allNums.push(finalResult);
+    allNums.push(Math.round(finalResult * 100) / 100);
   } else if (allNums.length === 2) {
     if (expression === "add") {
       let result = add(allNums);
-      finalResult = result;
+      finalResult = Math.round(result * 100) / 100;
     } else if (expression === "subtract") {
       let result = subtract(allNums);
-      finalResult = result;
+      finalResult = Math.round(result * 100) / 100;
     } else if (expression === "multiply") {
       let result = multi(allNums);
-      finalResult = result;
+      finalResult = Math.round(result * 100) / 100;
     } else if (expression === "divide") {
       let result = divide(allNums);
-      finalResult = result;
+      finalResult = Math.round(result * 100) / 100;
     }
     allNums = [];
     allNums.push(finalResult);
   }
 
-  finalResult !== undefined ? (mainNumChild.textContent = finalResult) : null;
+  finalResult !== undefined
+    ? (mainNumChild.textContent = Math.round(finalResult * 100) / 100)
+    : null;
 
   if (e.id === "add") {
     expression = "add";
@@ -100,11 +102,25 @@ const operate = (e) => {
     formulaDisplay.push("÷");
   } else if (e.id === "equal") {
     expression = "equal";
-    mainNumChild.textContent = finalResult;
+    mainNumChild.textContent = Math.round(finalResult * 100) / 100;
   }
   secondNum.textContent = formulaDisplay.join("");
   num = [];
 };
+
+window.addEventListener("keydown", (e) => {
+  const key = document.querySelector(`.key[data-key='${e.keyCode}']`);
+  const keyFunc = key.getAttribute("onclick");
+  if (keyFunc === "numEntered(this)") {
+    numEntered(key);
+  } else if (keyFunc === "operate(this)") {
+    operate(key);
+  } else if (keyFunc === "eraseAll()") {
+    eraseAll();
+  } else if (keyFunc === "erase(this)") {
+    erase(key);
+  }
+});
 
 const numEntered = (e) => {
   num.push(e.innerText);
