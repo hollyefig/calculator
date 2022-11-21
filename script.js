@@ -45,12 +45,15 @@ const divide = (e) => {
   return e.reduce((a, b) => a / b);
 };
 
+// operate!
 const operate = (e) => {
   if (expression !== "equal") {
-    allNums.push(Number(num.join("")));
+    let joinNum = num.join("");
+    allNums.push(Number(joinNum));
   } else {
     formulaDisplay = [finalResult];
   }
+  console.log("allNums in operate", allNums);
 
   // if addition
   if (expression === "add") {
@@ -129,9 +132,7 @@ const operate = (e) => {
 };
 
 const numEntered = (e) => {
-  console.log("inner text", e.innerText);
-  num.push(Number(e.innerText));
-  console.log("numArray", num);
+  num.push(e.innerText);
   formulaDisplay.push(e.innerText);
   secondNum.textContent = formulaDisplay.join("");
 };
